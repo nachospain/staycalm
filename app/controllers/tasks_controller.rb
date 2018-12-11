@@ -62,6 +62,13 @@ class TasksController < ApplicationController
     end
   end
 
+  def complete
+   @task = current_user.tasks.find(params[:id])
+   @task.done = true
+   @task.save
+   redirect_to tasks_path
+ end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task

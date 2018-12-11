@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Tasks</h1>
+<h1><%= Date.current %></h1>
+
 
 <table>
   <thead>
@@ -21,12 +23,14 @@
         <td><%= task.done %></td>
         <td><%= task.user.email %></td>
         <td><%= link_to 'Show', task %></td>
+
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
 
 <br>
 
