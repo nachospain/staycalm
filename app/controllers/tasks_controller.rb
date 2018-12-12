@@ -26,6 +26,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.user = current_user
+    @task.due_date = Time.parse(task_params[:due_date])
 
     respond_to do |format|
       if @task.save
@@ -62,14 +63,20 @@ class TasksController < ApplicationController
     end
   end
 
-  def complete
+  def done
    @task = current_user.tasks.find(params[:id])
    @task.done = true
    @task.save
    redirect_to tasks_path
  end
+ def undo
+   @task = current_user.tasks.find(params[:id])
+   @task.done = false
+   @task.save
+   redirect_to tasks_path
+ end
 
-  private
+ private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
       @task = Task.find(params[:id])
@@ -77,6 +84,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :description, :done, :user_id)
+      params.require(:task).permit(:name, :description, :done, :user_id, :due_date)
     end
-end
+  end

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :tasks
+  resources :tasks do
+    member do
+      patch 'done'
+      patch 'undo'
+    end
+  end
+
   devise_for :users
 
   root to: 'tasks#index'

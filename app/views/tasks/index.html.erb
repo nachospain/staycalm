@@ -2,36 +2,76 @@
 
 <h1>Tasks</h1>
 <h1><%= Date.current %></h1>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Done</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.name %></td>
-        <td><%= task.description %></td>
-        <td><%= task.done %></td>
-        <td><%= task.user.email %></td>
-        <td><%= link_to 'Show', task %></td>
-
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
 <br>
 
 <%= link_to 'New Task', new_task_path %>
+<% @tasks.each do |task| %>
+
+<div class="slide-container">
+
+  <div class="wrapper">
+    <div class="clash-card barbarian">
+      <div class="clash-card__image clash-card__image--barbarian">
+        <% if Date.current <= task.due_date %>
+        <div class="emoji  emoji--yay">
+          <div class="emoji__face">
+            <div class="emoji__eyebrows"></div>
+            <div class="emoji__mouth"></div>
+          </div>
+        </div>
+          <% if  Date.current < task.due_date %>
+          <h4><%= "Still have time" %></h4>
+          <% elsif Date.current == task.due_date %>
+          <h4><%= "Today is your last day" %></h4>
+          <% end %>
+          <% elsif task.done == true %>
+          <div class="emoji  emoji--wow">
+            <div class="emoji__face">
+              <div class="emoji__eyebrows"></div>
+              <div class="emoji__eyes"></div>
+              <div class="emoji__mouth"></div>
+            </div>
+          </div>
+        <% else %>
+        <div class="emoji  emoji--angry">
+          <div class="emoji__face">
+            <div class="emoji__eyebrows"></div>
+            <div class="emoji__eyes"></div>
+            <div class="emoji__mouth"></div>
+          </div>
+        </div>
+        <h4><%= "Late for your task" %></h4>
+        <% end %>
+
+
+      </div>
+      <div class="clash-card__level clash-card__level--barbarian"><%= task.due_date.strftime("%B %d, %Y") %></div>
+      <div class="clash-card__unit-name"><%= task.name %></div>
+      <div class="clash-card__unit-description">
+        <%= task.description %>
+      </div>
+
+      <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
+        <div class="one-third">
+
+          <div class="stat-value"><%= link_to "done",  done_task_path(task.id), method: :patch, class: 'event-link'  %></div>
+        </div>
+
+        <div class="one-third">
+
+          <div class="stat-value"><%= link_to 'Edit', edit_task_path(task) %></div>
+        </div>
+
+        <div class="one-third no-border">
+
+          <div class="stat-value"><%= link_to "undo",  undo_task_path(task.id), method: :patch, class: 'event-link'  %></div>
+        </div>
+
+      </div>
+
+    </div> <!-- end clash-card barbarian-->
+  </div> <!-- end wrapper -->
+</div>
+<% end %>
+
+
