@@ -7,22 +7,24 @@ $giant: #F6901A;
 $goblin: #82BB30;
 $wizard: #4FACFF;
 
-*, *:before, *:after {
-  box-sizing: border-box;
+a.event-link{
+      color: #333;
+    text-decoration: none;
+    font-weight: 900;
 }
-
 body {
   background: linear-gradient(to bottom, rgba(140,122,122,1) 0%, rgba(175,135,124,1) 65%, rgba(175,135,124,1) 100%) fixed;
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg') no-repeat center center fixed;
   background-size: cover;
+  overflow-x: hidden;
   font: 14px/20px "Lato", Arial, sans-serif;
   color: #9E9E9E;
-  margin-top: 30px;
+  // margin-top: 30px;
 }
 
 .slide-container {
   margin: auto;
-  width: 600px;
+  width: 100vw;
   text-align: center;
 }
 
@@ -46,7 +48,7 @@ body {
   position: relative;
   text-align: center;
   box-shadow: -1px 15px 30px -12px black;
-  z-index: 9999;
+  z-index: 99;
 }
 
 .clash-card__image {
@@ -150,40 +152,40 @@ body {
   background: $barbarian;
 
   .one-third {
-     border-right: 1px solid #BD7C2F;
-  }
+   border-right: 1px solid #BD7C2F;
+ }
 }
 
 .clash-card__unit-stats--archer {
   background: $archer;
 
   .one-third {
-     border-right: 1px solid #D04976;
-  }
+   border-right: 1px solid #D04976;
+ }
 }
 
 .clash-card__unit-stats--giant {
   background: $giant;
 
   .one-third {
-     border-right: 1px solid darken($giant, 8%);
-  }
+   border-right: 1px solid darken($giant, 8%);
+ }
 }
 
 .clash-card__unit-stats--goblin {
   background: $goblin;
 
   .one-third {
-     border-right: 1px solid darken($goblin, 6%);
-  }
+   border-right: 1px solid darken($goblin, 6%);
+ }
 }
 
 .clash-card__unit-stats--wizard {
   background: $wizard;
 
   .one-third {
-     border-right: 1px solid darken($wizard, 6%);
-  }
+   border-right: 1px solid darken($wizard, 6%);
+ }
 }
 
 .clash-card__unit-stats {
@@ -495,7 +497,7 @@ $emoji-text-color: #8A8A8A;
     content: 'Wow';
   }
   .emoji__face {
-  animation: wow-face 3s linear infinite;
+    animation: wow-face 3s linear infinite;
   }
 
   .emoji__eyebrows {
@@ -637,4 +639,48 @@ $emoji-text-color: #8A8A8A;
 
 @keyframes angry-mouth {
   25%, 50% {height: 6px; bottom: 25px;}
+}
+/////check
+.checkmark {
+  width: 100px;
+  height: 100px;
+  margin: 30px auto;
+  position: absolute;
+  top: -65px;
+  left: -35px;
+  z-index: 100;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 500ms ease-in-out forwards;
+  -webkit-animation: dash 500ms ease-in-out forwards;
+}
+
+.check {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 500ms ease-in-out forwards;
+  -webkit-animation: dash 500ms ease-in-out forwards;
+  animation-delay: 200ms;
+  -webkit-animation-delay: 200ms;
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: -1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: -1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
