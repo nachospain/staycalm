@@ -2,7 +2,9 @@
 
 <div class="slide-container">
     <div class="justify_logo">
-    <%= link_to 'New Task', new_task_path %>
+    <%= link_to  new_task_path do %>
+    <p class="new-task"><i class="far fa-plus-square"></i></p>
+    <% end %>
   </div>
   <% @tasks.each do |task| %>
 
