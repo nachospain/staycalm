@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       patch 'undo'
     end
   end
+  match 'calendar' => 'tasks#calendar', :via => :get
 
   devise_for :users
 

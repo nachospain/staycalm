@@ -6,6 +6,16 @@
     <p><i class="far fa-plus-square FA-key add"></i></p>
     <% end %>
   </div>
+<%= month_calendar events: @tasks do |date, tasks| %>
+  <%= date.day %>
+
+  <% tasks.each do |task| %>
+    <div>
+      <%= task.name %>
+    </div>
+  <% end %>
+<% end %>
+
   <% @tasks.each do |task| %>
   <div class="wrapper">
     <div class="clash-card barbarian">
