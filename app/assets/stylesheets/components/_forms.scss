@@ -21,12 +21,20 @@
 
 .FA-key {
   font-size: 30px;
+  color: #ffd084;
+  margin-top: 20px;
 }
+.FA-key:hover {
+  color: #fb9e08;
+
+}
+
+
 .FA-key.add {
   margin-top: 20px;
-  color: grey;
+  color: #ffd084;
   font-size: 40px;
 }
 .FA-key.add:hover {
-  color: black;
+  color: #fb9e08;
 }

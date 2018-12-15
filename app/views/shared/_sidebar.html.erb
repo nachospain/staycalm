@@ -5,8 +5,11 @@
     <% if user_signed_in? %>
 
       <%= link_to t(".sign_in", default: "Logout"), destroy_user_session_path, method: :delete, class: "link-side-bar" %>
-      <p class= "link-side-bar"> Daily</p>
-      <p class= "link-side-bar"> Calendar</p>
+      <%= link_to t(".sign_in", default: "My tasks"), tasks_path, class: "link-side-bar" %>
+      <%= link_to t(".sign_in", default: "My calendar"), calendar_path, class: "link-side-bar" %>
+      <%= link_to t(".sign_in", default: "Week"), week_path, class: "link-side-bar" %>
+      <%= link_to t(".sign_in", default: "Today"), day_path, class: "link-side-bar" %>
+
     <%else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "link-side-bar" %>
       <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "link-side-bar" %>

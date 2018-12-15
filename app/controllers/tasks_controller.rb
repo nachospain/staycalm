@@ -10,6 +10,26 @@ class TasksController < ApplicationController
   def calendar
     @tasks = Task.all
   end
+  def week
+    beginning = Date.today.beginning_of_week
+    end_week = Date.today.end_of_week
+    tasks = Task.all
+    @tasks = []
+    tasks.each do |task|
+      if task.due_date.between?(beginning, end_week)
+        @tasks << task
+      end
+    end
+  end
+  def day
+    tasks = Task.all
+    @tasks = []
+    tasks.each do |task|
+      if task.due_date == Date.today
+        @tasks << task
+      end
+    end
+  end
 
   def show
   end

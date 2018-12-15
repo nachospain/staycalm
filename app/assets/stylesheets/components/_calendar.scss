@@ -1,0 +1,87 @@
+.simple-calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+}
+.table {
+  width: 85%;
+  max-width: 100%;
+  margin-bottom: 25px;
+  margin-top: 30px;
+
+}
+
+.calendar-heading {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+      margin-top: 26px;
+
+}
+
+
+
+.simple-calendar {
+  table {
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    // border: 1px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+    box-sizing: border-box;
+    max-width: 100%;
+    // width: 100%;
+  }
+
+  tr {
+    border-collapse: collapse;
+  }
+
+  th {
+    padding: 12px;
+    color: #ffd084;
+    font-size: 20px;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  td {
+    padding: 6px;
+    vertical-align: top;
+    width: 14%;
+  }
+
+  .day {
+    height: 80px;
+  }
+
+  .wday-0 {
+  }
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {
+    background: #ffd084;
+  }
+
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {
+    // background: #DDD;
+  }
+  .next-month {
+    background: #DDD;
+  }
+  .current-month {}
+
+  .has-events {}
+}
