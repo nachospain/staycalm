@@ -4,16 +4,17 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks.all
+
   end
 
   def calendar
-    @tasks = Task.all
+    @tasks = current_user.tasks.all
   end
   def week
     beginning = Date.today.beginning_of_week
     end_week = Date.today.end_of_week
-    tasks = Task.all
+    tasks = current_user.tasks.all
     @tasks = []
     tasks.each do |task|
       if task.due_date.between?(beginning, end_week)
@@ -22,7 +23,7 @@ class TasksController < ApplicationController
     end
   end
   def day
-    tasks = Task.all
+    tasks = current_user.tasks.all
     @tasks = []
     tasks.each do |task|
       if task.due_date == Date.today
