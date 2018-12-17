@@ -1,7 +1,9 @@
-<h1 style="text-align:center; color: black;">New Task</h1>
+<div class="back-link"><%= link_to tasks_path do %>
+  <i class="fas fa-arrow-left FA-key"  style="padding-left: 20px;"></i>
+  <% end %>
+</div>
+<h1 style="text-align:center; color: ;">New Task</h1>
 
 <%= render 'form', task: @task %>
 
-<%= link_to tasks_path do %>
-<i class="fas fa-undo FA-key"></i>
-<% end %>
+

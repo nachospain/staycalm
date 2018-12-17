@@ -1,22 +1,31 @@
 <div class="form-style">
   <h2 class="form-head">Log in</h2>
+  <br>
+  <br>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-    </div>
+  <div class="row">
 
-    <div class="form-actions">
-      <%= f.button :submit, "Log in" %>
-    </div>
-  <% end %>
+      <div class="form-inputs">
+        <%= f.input :email,
+        class: "my-form",
+        required: false,
+        autofocus: true,
+        input_html: { label: "email" }%>
+        <%= f.input :password,
+        required: false,
+        input_html: { } %>
+      </div>
+
+
+</div>
+
+<div class="form-actions">
+  <%= f.button :submit, "Log in" %>
+</div>
+<% end %>
 <%= render "devise/shared/links" %>
 </div>
+
+
 

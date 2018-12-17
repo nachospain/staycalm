@@ -1,16 +1,32 @@
 .form-head {
   text-align: center;
-  color: black;
+  color: #eeeeee;
+}
+.devise-links {
+  color: #eeeeee;
+}
+.devise-links.log-in {
+  color: #eeeeee;
+  padding-top: 30px;
 }
 .form-style {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  padding: 41px;
+}
+@media (min-width: 1281px) {
+  .form-inputs {
+    width: 30vw;
+
+  }
 }
 .form-inputs {
   width: 50vw;
 
 }
+
 .flex {
   display: flex;
 
@@ -37,4 +53,29 @@
 }
 .FA-key.add:hover {
   color: #fb9e08;
+}
+
+input#user_email.form-control.string.email.optional {
+  border-radius: 20px !important;
+}
+input#user_password.form-control.password.optional {
+  border-radius: 20px !important;
+}
+input.btn {
+  border-radius: 10px !important;
+}
+input#user_password_confirmation.form-control.password.required{border-radius: 20px !important;}
+input#user_email.form-control.string.email.required{border-radius: 20px !important;}
+input#user_password.form-control.password.required{border-radius: 20px !important;}
+
+label.form-control-label.email.required{color: white;}
+label.form-control-label.password.required{color: white;}
+input#task_name.form-control.string.optional {
+  border-radius: 20px !important;
+}
+textarea#task_description.form-control.text.optional{
+  border-radius: 20px !important;
+}
+input#task_due_date.form-control.string.optional{
+  border-radius: 20px !important;
 }

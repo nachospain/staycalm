@@ -84,8 +84,12 @@ img#navbar-wagon-menu {
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
+  color: #eeeeee;
   font-size: 21px;
+}
+a.navbar-wagon-link:hover {
+  color: #eeeeee;
+  font-size: 23px;
 }
 
 
