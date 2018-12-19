@@ -30,10 +30,11 @@ a {
   height: 35px;
 }
 div.justify_logo {
-  width: 100%;
-  display: flex;
-justify-content: center;
-margin-bottom: 14px;
+//   width: 100%;
+//   display: flex;
+// justify-content: center;
+// margin-bottom: 14px;
+padding-bottom: 38px;
 }
 
 /* User Avatar */
@@ -63,12 +64,8 @@ img#navbar-wagon-menu {
     height: 42px;
   }
   div.justify_logo {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    height: 50px;
-    padding-bottom: 0px;
-    margin-right: 17%;
+    padding-bottom: 30px;
+
   }
 }
 @media only screen and (max-width:350px) {

@@ -8,14 +8,15 @@ $goblin: #82BB30;
 $wizard: #4FACFF;
 
 a.event-link{
-      color: #333;
-    text-decoration: none;
-    font-weight: 900;
+  color: #333;
+  text-decoration: none;
+  font-weight: 900;
 }
 body {
-  background: linear-gradient(to bottom, rgba(140,122,122,1) 0%, rgba(175,135,124,1) 65%, rgba(175,135,124,1) 100%) fixed;
+  background-color: #FAFAFA;
+  // background: linear-gradient(to bottom, rgba(140,122,122,1) 0%, rgba(175,135,124,1) 65%, rgba(175,135,124,1) 100%) fixed;
   // background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg') no-repeat center center fixed;
-  background-size: cover;
+  // background-size: cover;
   overflow-x: hidden;
   font: 14px/20px "Lato", Arial, sans-serif;
   color: #9E9E9E;
@@ -44,7 +45,6 @@ body {
   width: 300px;
   display: inline-block;
   margin: auto;
-  border-radius: $border-radius-size + 5;
   position: relative;
   text-align: center;
   box-shadow: -1px 15px 30px -12px black;
@@ -53,8 +53,8 @@ body {
 
 .clash-card__image {
   position: relative;
-    height: 100px;
-    margin-bottom: 12px;
+  height: 100px;
+  margin-bottom: 12px;
   border-top-left-radius: $border-radius-size;
   border-top-right-radius: $border-radius-size;
 }
@@ -245,24 +245,86 @@ body {
 }
 
 .late {
-  font-size: 7rem;
+  font-size: 5rem;
+  position: relative;
+  bottom: 20px;
 }
 .late::before {
   content: "😡";
 }
 
 .done {
-  font-size: 7rem;
+  font-size: 5rem;
+    position: relative;
+  bottom: 20px;
 }
 .done::before {
   content: "🥳";
 }
 
 .early {
-  font-size: 7rem;
+  font-size: 5rem;
+    position: relative;
+  bottom: 20px;
 }
 .early::before {
   content: "🧐";
+}
+
+
+/// le wagon
+.card {
+  height: 175px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+    border-top-left-radius: 14px;
+    background-color: antiquewhite;
+  border-top-right-radius: 14px;
+  color: #5a5353;
+  position: relative;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-category {
+    display: flex !important;
+  justify-content: space-around;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+  width: 92% !important;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
 }
 
 

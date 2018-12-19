@@ -1,39 +1,43 @@
 
 
 <div class="slide-container">
-  <h1 style="color: #fff;">These are your weekly tasks</h1>
   <div class="justify_logo">
     <%= link_to  new_task_path do %>
     <p><i class="far fa-plus-square FA-key add"></i></p>
     <% end %>
   </div>
-  <% @tasks.each do |task| %>
-  <div class="wrapper">
-    <div class="clash-card barbarian">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <!-- insert <div class="card"> -->
+          <% @tasks.each do |task| %>
+          <div class="card" >
 
-      <div class="clash-card__image clash-card__image--barbarian">
-        <% case %>
+            <div class="card-description">
+              <h2><%= task.name %></h2>
+              <p><%= task.description %></p>
+            </div>
+            <% case %>
         <% when task.done == true  %>
         <div class="done"></div>
         <% when task.done == false && Date.current > task.due_date %>
         <div class="late"></div>
-        <h4 class="orange-text"><%= Date.today.day - task.due_date.day %> days late</h4>
+        <div class="card-category"><%= task.due_date.strftime("%B %d, %Y") %>
+        <p ><%= Date.today.day - task.due_date.day %> days late</p>
+        </div>
         <% when Date.current < task.due_date %>
         <div class="early">
         </div>
-        <h4 class="orange-text"><%= task.due_date.day - Date.today.day %> days left</h4>
+        <div class="card-category"><%= task.due_date.strftime("%B %d, %Y") %>
+        <p ><%= task.due_date.day - Date.today.day %> days left</p>
+      </div>
         <% when Date.current == task.due_date %>
         <div class="late">
         </div>
-        <h4 class="orange-text"><%= "Today is your last day" %></h4>
         <% end %>
       </div>
-      <div class="clash-card__level clash-card__level--barbarian"><%= task.due_date.strftime("%B %d, %Y") %></div>
-      <div class="clash-card__unit-name"><%= task.name %></div>
-      <div class="clash-card__unit-description"><%= task.description %></div>
 
-
-      <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
+            <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
       <% if task.done == false %>
         <div class="one-third">
         <div class="stat-value"><%= link_to "done",  done_task_path(task.id), method: :patch, class: 'event-link' %></div>
@@ -55,13 +59,9 @@
           <div class="stat-value"><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'event-link' %></div>
         </div>
       </div>
-      <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
-      </div>
       <% end %>
-
-
-
-    </div> <!-- end clash-card barbarian-->
-  </div> <!-- end wrapper -->
-  <% end %>
-</div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
