@@ -8,60 +8,59 @@
   </div>
   <div class="container">
     <div class="row">
+      <% @tasks.each do |task| %>
       <div class="col-xs-12 col-sm-4">
         <!-- insert <div class="card"> -->
-          <% @tasks.each do |task| %>
           <div class="card" >
 
+
+            <% if task.done == true  %>
+            <div class="done"></div>
+            <div class="card-category"><%= task.due_date.strftime("%B %d, %Y") %>
+            <% elsif task.done == false && Date.current > task.due_date %>
+            <div class="late"></div>
+            <div class="card-category"><%= task.due_date.strftime("%B %d, %Y") %>
+              <p ><%= Date.today.day - task.due_date.day %> days late</p>
+            </div>
+            <% elsif task.done == false && Date.current < task.due_date %>
+            <div class="early"></div>
+            <div class="card-category"><%= task.due_date.strftime("%B %d, %Y") %>
+              <p ><%= Date.today.day - task.due_date.day %> days left</p>
+            </div>
+
+            <% end %>
             <div class="card-description">
               <h2><%= task.name %></h2>
               <p><%= task.description %></p>
             </div>
-            <% case %>
-        <% when task.done == true  %>
-        <div class="done"></div>
-        <% when task.done == false && Date.current > task.due_date %>
-        <div class="late"></div>
-        <div class="card-category"><%= task.due_date.strftime("%B %d, %Y") %>
-        <p ><%= Date.today.day - task.due_date.day %> days late</p>
-        </div>
-        <% when Date.current < task.due_date %>
-        <div class="early">
-        </div>
-        <div class="card-category"><%= task.due_date.strftime("%B %d, %Y") %>
-        <p ><%= task.due_date.day - Date.today.day %> days left</p>
-      </div>
-        <% when Date.current == task.due_date %>
-        <div class="late">
-        </div>
-        <% end %>
-      </div>
 
-            <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
-      <% if task.done == false %>
-        <div class="one-third">
-        <div class="stat-value"><%= link_to "done",  done_task_path(task.id), method: :patch, class: 'event-link' %></div>
-        </div>
-        <div class="one-third">
-          <div class="stat-value"><%= link_to 'Edit', edit_task_path(task), class: 'event-link' %></div>
-        </div>
-        <div class="one-third no-border">
-          <div class="stat-value"><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'event-link' %></div>
-        </div>
-      <% else %>
-              <div class="one-third">
-        <div class="stat-value"><%= link_to "undo",  undo_task_path(task.id), method: :patch, class: 'event-link'  %></div>
-        </div>
-        <div class="one-third">
-          <div class="stat-value"><%= link_to 'Edit', edit_task_path(task), class: 'event-link' %></div>
-        </div>
-        <div class="one-third no-border">
-          <div class="stat-value"><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'event-link' %></div>
-        </div>
-      </div>
-      <% end %>
+          </div>
+
+          <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
+            <% if task.done == false %>
+            <div class="one-third">
+              <div class="stat-value"><%= link_to "done",  done_task_path(task.id), method: :patch, class: 'event-link' %></div>
+            </div>
+            <div class="one-third">
+              <div class="stat-value"><%= link_to 'Edit', edit_task_path(task), class: 'event-link' %></div>
+            </div>
+            <div class="one-third no-border">
+              <div class="stat-value"><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'event-link' %></div>
+            </div>
+            <% else %>
+            <div class="one-third">
+              <div class="stat-value"><%= link_to "undo",  undo_task_path(task.id), method: :patch, class: 'event-link'  %></div>
+            </div>
+            <div class="one-third">
+              <div class="stat-value"><%= link_to 'Edit', edit_task_path(task), class: 'event-link' %></div>
+            </div>
+            <div class="one-third no-border">
+              <div class="stat-value"><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'event-link' %></div>
+            </div>
           </div>
           <% end %>
         </div>
       </div>
+      <% end %>
     </div>
+  </div>

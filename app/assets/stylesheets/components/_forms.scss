@@ -1,9 +1,9 @@
 .form-head {
   text-align: center;
-  color: #eeeeee;
+  color: #cc8647;
 }
 .devise-links {
-  color: #eeeeee;
+  color: #cc8647;
 }
 .devise-links.log-in {
   color: #eeeeee;
@@ -63,13 +63,17 @@ input#user_password.form-control.password.optional {
 }
 input.btn {
   border-radius: 10px !important;
+  background-color: #cc8647;
+  color: white;
 }
 input#user_password_confirmation.form-control.password.required{border-radius: 20px !important;}
 input#user_email.form-control.string.email.required{border-radius: 20px !important;}
 input#user_password.form-control.password.required{border-radius: 20px !important;}
 
-label.form-control-label.email.required{color: white;}
-label.form-control-label.password.required{color: white;}
+label.form-control-label.email.required{color: #cc8647;}
+label.form-control-label.email.optional{color: #cc8647;}
+label.form-control-label.password.optional{color: #cc8647;}
+label.form-control-label.password.required{color: #cc8647;}
 input#task_name.form-control.string.optional {
   border-radius: 20px !important;
 }

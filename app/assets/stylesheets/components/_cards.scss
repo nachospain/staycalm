@@ -255,7 +255,7 @@ body {
 
 .done {
   font-size: 5rem;
-    position: relative;
+  position: relative;
   bottom: 20px;
 }
 .done::before {
@@ -264,7 +264,7 @@ body {
 
 .early {
   font-size: 5rem;
-    position: relative;
+  position: relative;
   bottom: 20px;
 }
 .early::before {
@@ -278,8 +278,8 @@ body {
   text-shadow: 0 1px 1px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
-    border-top-left-radius: 14px;
-    background-color: antiquewhite;
+  border-top-left-radius: 14px;
+  background-color: antiquewhite;
   border-top-right-radius: 14px;
   color: #5a5353;
   position: relative;
@@ -292,7 +292,7 @@ body {
   border-radius: 50%;
 }
 .card-category {
-    display: flex !important;
+  display: flex !important;
   justify-content: space-around;
   top: 10px;
   left: 10px;
