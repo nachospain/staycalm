@@ -1,8 +1,13 @@
 
 
+  <div class="back-link"><%= link_to tasks_path do %>
+  <i class="fas fa-arrow-left FA-key"  style="padding-left: 20px;"></i>
+  <% end %>
+</div>
 <div class="slide-container">
 
   <div class="justify_logo">
+
     <%= link_to  new_task_path do %>
       <p><i class="far fa-plus-square FA-key add"></i></p>
     <% end %>
@@ -77,8 +82,4 @@
     <!-- slide -->
   </div>
 
-<div style="text-align: center; color: orange; font-size: 30px;">
-  <%= link_to tasks_path  do %>
-    <i class="fas fa-chevron-left"></i>
-  <% end %>
-</div>
+
