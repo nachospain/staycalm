@@ -21,7 +21,7 @@
             <% if task.done == true  %>
             <div class="done"></div>
             <div class="card-category"><%= task.due_date.strftime("%B %d, %Y") %></div>
-            <% elsif task.done == false && Date.current > task.due_date %>
+            <% elsif task.done == false && Date.current >= task.due_date %>
             <div class="late"></div>
             <div class="card-category"><%= task.due_date.strftime("%B %d, %Y") %>
               <p ><%= Date.today.day - task.due_date.day %> days late</p>
