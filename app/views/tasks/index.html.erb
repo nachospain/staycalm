@@ -29,7 +29,7 @@
             <% elsif task.done == false && Date.current < task.due_date %>
             <div class="early"></div>
             <div class="card-category"><%= task.due_date.strftime("%B %d, %Y") %>
-              <p ><%= Date.today.day - task.due_date.day %> days left</p>
+              <p ><%= task.due_date.day - Date.today.day %> days left</p>
             </div>
 
 
