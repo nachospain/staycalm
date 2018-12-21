@@ -2,8 +2,8 @@
   <%= date.day %>
 
   <% tasks.each do |task| %>
-    <div>
-      <%= task.name %>
-    </div>
+    <ul>
+      <li><%= link_to task.name, task_path(task.id) %></li>
+    </ul>
   <% end %>
 <% end %>
