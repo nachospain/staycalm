@@ -161,6 +161,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    serviceworker-rails (0.5.5)
+      railties (>= 3.1)
     simple_calendar (2.3.0)
       rails (>= 3.0)
     simple_form (4.1.0)
@@ -219,6 +221,7 @@ DEPENDENCIES
   rails (= 5.2.1)
   redis
   sassc-rails
+  serviceworker-rails
   simple_calendar (~> 2.3)
   simple_form
   spring

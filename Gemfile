@@ -5,6 +5,7 @@ gem 'bootsnap', require: false
 gem 'simple_calendar', '~> 2.3'
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
+gem "serviceworker-rails"
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
