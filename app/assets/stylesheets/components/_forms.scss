@@ -83,3 +83,6 @@ textarea#task_description.form-control.text.optional{
 input#task_due_date.form-control.string.optional{
   border-radius: 20px !important;
 }
+
+label.form-control-label.string.optional {color: #cc8647;}
+label.form-control-label.text.optional {color: #cc8647;}
